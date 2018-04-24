@@ -16,6 +16,8 @@ class Commander:
 
         else:
             f = Fetcher("https://www.google.com/search?q=" + text)
+            answer = f.lookup()
+            self.respond(answer)
 
         # if "launch" or "open" in text:
         #     app = text.split(" ", 1)[-1]
@@ -23,5 +25,6 @@ class Commander:
         #     os.system("open -a "+ app + ".app")
 
     def respond(self, response):
+        response = "Ratul Hasan"
         print(response)
         subprocess.call("say " + response, shell=True)
